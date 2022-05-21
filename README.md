@@ -1,49 +1,22 @@
-Device tree for Honor V9 Play (jimmy)
+# Device Tree for Huawei Y5 (2018) (HWDRA-M)
 
-Configuration for Honor V9 Play (JMM-AL00)
-========================================================
+Copyright 2022, TeamWin Recovery Project
 
-The Honor V9 Play (codenamed _"JMM-AL00"_)
-It was announced on September 2017 .
+The Huawei Y5 (2018) (codenamed _"HWDRA-M"_) is a budget smartphone from Huawei.
+It was released in June 2018.
 
-## Device specifications
+|                   Basic | Spec Sheet                                                    |
+| ----------------------: | :------------------------------------------------------------ |
+| Chipset                 | MediaTek MT6739                                               |
+| CPU                     | Quad-core 1.5 GHz Cortex-A53                                  |
+| GPU                     | PowerVR GE8100                                                |
+| RAM                     | 1/2 GB                                                        |
+| Storage                 | 16/32 GB                                                      |
+| Battery                 | Li-Ion 3020 mAh                                               |
+| Dimensions              | 146.5 x 70.9 x 8.3 mm                                         |
+| Display                 | LCD, 720 x 1440 pixels, 5.45 inches (~295 ppi density)        |
+| Rear camera             | 13 MP (f/2.0, AF), LED flash                                  |
+| Front camera            | 5 MP, No flash                                                |
+| Shipped Android Version | 8.1.0                                                         |
 
-Basic             | Spec Sheet
------------------:|:-------------------------
-SoC               | MediaTek MT6750, Octa-core(4 x 1.5GHz Cortex A53 + 4 x 1.0GHz Cortex A53
-CPU               | MediaTek MT6750
-GPU               | Mali-T860
-Memory            | 3/4 GB RAM
-Android           | 7.0
-User Interface    | EMIU 5.1
-Storage           | 32 GB
-MicroSD           | Up to 128 GB
-Battery           | 3000 mAh (non-removable)
-Display           | 720 x 1280 pixels, 5.2" (282ppi)
-Rear Camera       | 13.0 MP
-Front Camera      | 8.0 MP
-
-# Hardware Info
-
-Basic             | Spec Sheet
------------------:|:-------------------------
-TouchPanel        | each-ft5436
-Camera_Main       | s5k3I8mipiraw
-Camera_Sub        | ov8856mipiraw
-WIFI              | CONSYS_MT6755
-
-        git init
-        git add .
-        git commit -m "first commit"
-        git remote add origin https://github.com/sazan123/android_device_huawei_jimmy.git
-        git branch twrp-7.1
-        git push -u origin twrp-7.1
-
-# Build TWRP
-  
-        cd (source-dir)
-        . build/envsetup.sh
-        lunch omni_jimmy-eng
-        mka clean
-        mka recoveryimage
-
+<img src="https://user-images.githubusercontent.com/67373913/169615300-663a14f9-cdf9-466a-9f15-3cfee98ca5c4.png" width="40%">

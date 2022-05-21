@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_jimmy.mk
+    $(LOCAL_DIR)/omni_dura64.mk

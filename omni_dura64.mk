@@ -14,13 +14,9 @@
 # limitations under the License.
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := jimmy
-PRODUCT_NAME := full_jimmy
-PRODUCT_BRAND := huawei
-PRODUCT_MODEL := Honor V9 Play
-PRODUCT_MANUFACTURER := huawei
-PRODUCT_BOARD := jimmy
+$(call inherit-product, device/huawei/dura64/full_dura64.mk)
+
+PRODUCT_NAME := omni_dura64
