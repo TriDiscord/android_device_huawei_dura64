@@ -38,9 +38,10 @@ jobs:
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
           export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+          export OF_DISABLE_KEYMASTER2=1
           export LC_ALL=C
           lunch omni_dura64-eng
-          make -j$(nproc --all) recoveryimage
+          mka recoveryimage
 
       - name: Uploading OFRP builds
         uses: actions/upload-artifact@v2
