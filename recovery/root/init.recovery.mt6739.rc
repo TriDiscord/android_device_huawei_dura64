@@ -39,3 +39,42 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.function="none"
     write /config/usb_gadget/g1/idProduct 0xd001
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC "musb-hdrc"
+
+# Huawei USB
+on property:ro.debuggable=1
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 12d1
+    write /sys/class/android_usb/android0/idProduct 107f
+#DTS2017052506583 leipengcheng lwx446408    20170602 begin
+    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
+#DTS2017052506583 leipengcheng lwx446408    20170602 end
+    write /sys/class/android_usb/android0/f_ffs/aliases adb
+    write /sys/class/android_usb/android0/functions adb
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    start hdbd
+
+
+on property:sys.usb.test=adb,acm
+    stop adbd
+    setprop sys.usb.ffs.ready 0
+    setprop sys.usb.function adb,acm
+    write /config/usb_gadget/g1/UDC "none"
+    rm /config/usb_gadget/g1/configs/b.1/f1
+    rm /config/usb_gadget/g1/configs/b.1/f2
+    rm /config/usb_gadget/g1/configs/b.1/f3
+	write /sys/class/udc/musb-hdrc/device/cmode 1
+    start adbd
+    setprop sys.usb.config adb,acm
+
+on property:sys.usb.ffs.ready=1 && property:sys.usb.function=adb,acm && property:sys.usb.config=adb,acm
+    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "adb_acm"
+    write /config/usb_gadget/g1/idProduct 0x107F
+    write /config/usb_gadget/g1/idVendor 0x12D1
+    write /sys/devices/platform/mt_usb/saving 1
+    symlink /config/usb_gadget/g1/functions/mass_storage.usb0 /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
+    symlink /config/usb_gadget/g1/functions/acm.gs0 /config/usb_gadget/g1/configs/b.1/f3
+    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
+    setprop sys.usb.state ${sys.usb.config}
+
