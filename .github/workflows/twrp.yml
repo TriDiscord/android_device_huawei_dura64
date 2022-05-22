@@ -38,7 +38,7 @@ jobs:
           export ALLOW_MISSING_DEPENDENCIES=true
           export LC_ALL=C
           lunch omni_dura64-eng
-          make -j$(nproc --all) recoveryimage
+          mka recoveryimage
 
       - name: Uploading TWRP builds
         uses: actions/upload-artifact@v2
