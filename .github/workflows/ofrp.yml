@@ -26,9 +26,9 @@ jobs:
 
           mkdir ~/.bin
           curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-          python3 ~/.bin/repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_8.1
+          python3 ~/.bin/repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
           mkdir .repo/local_manifests
-          curl https://gist.githubusercontent.com/TriDiscord/1e416768296277cbad9d175471a71855/raw > .repo/local_manifests/of_81_dura64.xml
+          curl https://gist.githubusercontent.com/TriDiscord/1e416768296277cbad9d175471a71855/raw > .repo/local_manifests/of_90_dura64.xml
           python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
           chmod -R a+x device/huawei/dura64
 
