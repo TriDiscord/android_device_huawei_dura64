@@ -27,8 +27,9 @@ jobs:
           mkdir ~/.bin
           curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
           python3 ~/.bin/repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_8.1
+          mkdir .repo/local_manifests
+          curl https://gist.githubusercontent.com/TriDiscord/1e416768296277cbad9d175471a71855/raw > .repo/local_manifests/of_81_dura64.xml
           python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-          git clone --branch twrp-8.1 --single-branch https://github.com/TriDiscord/android_device_huawei_dura64.git ~/TWRP/device/huawei/dura64
           chmod -R a+x device/huawei/dura64
 
       - name: Building OFRP
