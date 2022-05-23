@@ -1,8 +1,8 @@
-# Device Tree for Huawei Y5 (2018) (dura64)
+# Device Tree for Huawei Y5 2018 (dura64)
 
 Copyright 2022, TeamWin Recovery Project
 
-The Huawei Y5 (2018) (codenamed _"dura64"_) is a budget smartphone from Huawei.
+The Huawei Y5 2018 (codenamed _"dura64"_) is a budget smartphone from Huawei.
 It was released in June 2018.
 
 |                   Basic | Spec Sheet                                                    |
