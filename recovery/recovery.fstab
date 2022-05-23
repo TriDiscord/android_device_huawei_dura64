@@ -3,7 +3,7 @@
 /vendor          ext4     /dev/block/platform/bootdevice/by-name/vendor          flags=backup=1;display="Vendor"
 /vendor_image    emmc     /dev/block/platform/bootdevice/by-name/vendor          flags=backup=1;display="Vendor Image";flashimg=1
 /cust            ext4     /dev/block/platform/bootdevice/by-name/cust            flags=backup=1;display="Custom"
-/data            f2fs     /dev/block/platform/bootdevice/by-name/userdata        flags=backup=1;display="Data"
+/data            f2fs     /dev/block/platform/bootdevice/by-name/userdata        flags=fileencryption=aes-256-xts;backup=1;display="Data"
 /cache           ext4     /dev/block/platform/bootdevice/by-name/cache           flags=backup=1;display="Cache"
 /log             ext4     /dev/block/platform/bootdevice/by-name/log             flags=backup=1;display="Log"
 /proinfo         emmc     /dev/block/platform/bootdevice/by-name/proinfo         flags=backup=1;display="Product Info"
