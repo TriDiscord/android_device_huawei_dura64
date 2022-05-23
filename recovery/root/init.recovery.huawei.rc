@@ -179,7 +179,7 @@ on property:wmt_chrdev_wifi.ko=1 && property:ro.wlan.gen=gen2
     insmod /vendor/lib/modules/wlan_drv_gen2.ko
     setprop wlan_drv.ko 1
 
- service hwservicemanager /system/bin/hwservicemanager
+ service hwservicemanager /sbin/hwservicemanager
      user system
      disabled
      group system readproc
