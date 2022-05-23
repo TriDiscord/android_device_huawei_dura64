@@ -98,7 +98,7 @@ on fs
     write /proc/bootprof "start teei_daemon end (on fs)"
 
 # teei service daemon
-service teei_daemon /vendor/bin/teei_daemon
+service teei_daemon /sbin/teei_daemon
     class core
     user system
     group system
@@ -108,7 +108,7 @@ service teei_daemon /vendor/bin/teei_daemon
 on property:soter.teei.init=INIT_OK
     start init_thh_service
 
-service init_thh_service /vendor/bin/init_thh startload
+service init_thh_service /sbin/init_thh startload
     class core
    user system
    group system
