@@ -72,10 +72,12 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Encryption
 TW_INCLUDE_CRYPTO := true
-TW_CRYPTO_FS_TYPE := "f2fs"
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
-TW_CRYPTO_MNT_POINT := "/data"
-TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,inline_data,inline_xattr,data=ordered"
+ifeq ($(TW_INCLUDE_CRYPTO),true)
+  TW_CRYPTO_FS_TYPE := "f2fs"
+  TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
+  TW_CRYPTO_MNT_POINT := "/data"
+  TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,inline_data,inline_xattr,data=ordered"
+endif
 
 # App
 # TW_EXCLUDE_TWRPAPP := true
