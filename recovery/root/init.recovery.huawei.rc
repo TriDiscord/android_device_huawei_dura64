@@ -90,7 +90,7 @@ service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
 	ioprio rt 4
 	seclabel u:r:oeminfo_nvm:s0
 
-service keymaster-3-0 /vendor/bin/hw/android.hardware.keymaster@3.0-service
+service keymaster-3-0 /sbin/android.hardware.keymaster@3.0-service
         class early_hal
         user system
         group system drmrpc
