@@ -1,0 +1,2 @@
+# MT6739 configuration
+import /init.recovery.mt6739.usb.rc
