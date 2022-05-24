@@ -71,7 +71,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Encryption
-TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO := true
 ifeq ($(TW_INCLUDE_CRYPTO),true)
   TW_CRYPTO_FS_TYPE := "f2fs"
   TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
