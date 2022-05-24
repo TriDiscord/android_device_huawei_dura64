@@ -70,6 +70,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Logging
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+
 # Encryption
 TW_INCLUDE_CRYPTO := true
 ifeq ($(TW_INCLUDE_CRYPTO),true)
@@ -80,7 +84,6 @@ ifeq ($(TW_INCLUDE_CRYPTO),true)
 endif
 
 # App
-# TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_SUPERSU := true
 
 # Recovery
