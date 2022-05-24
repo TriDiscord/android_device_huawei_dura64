@@ -41,7 +41,7 @@ jobs:
           export OF_DISABLE_KEYMASTER2=1
           export LC_ALL=C
           lunch omni_dura64-eng
-          mka recoveryimage
+          make -j$(nproc --all) recoveryimage
 
       - name: Uploading OFRP builds
         uses: actions/upload-artifact@v2
