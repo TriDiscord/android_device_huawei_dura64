@@ -87,16 +87,15 @@ endif
 TW_EXCLUDE_SUPERSU := true
 
 # Recovery
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
-# TW_CUSTOM_BATTERY_PATH := /sys/class/power_supply/battery
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
-#TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/virtual/android_usb/android0/f_mass_storage/lun/file
+TW_USE_BUSYBOX := true
+TW_USE_TOOLBOX := false
 
 # EMUI patch
 PLATFORM_SECURITY_PATCH := 2099-12-31
